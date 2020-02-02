@@ -64,6 +64,10 @@ ul.list-group:after {
   margin-top: 2%;
 }
 
+.margin-adj{
+  margin-bottom: 20px;
+}
+
 #decks {
   margin: 2% 10% 0% 10%;
 }
