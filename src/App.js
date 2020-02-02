@@ -53,7 +53,7 @@ class Donor extends React.Component {
   constructor(props) {
     super(props);
 
-    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search=pets")
+    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&pageSize=10&search=pets")
     .then(res => res.json())
     .then(data => {
       this.setState({orgs: data});
@@ -76,7 +76,7 @@ class Donor extends React.Component {
 
   handleSubmit(event) {
     alert('A query was submitted: ' + this.state.query);
-    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search="+
+    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&pageSize=10&search="+
     this.state.query)
     .then(res => res.json())
     .then(data => {
