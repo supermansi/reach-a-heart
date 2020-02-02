@@ -266,7 +266,7 @@ class createProfile extends React.Component {
 
   render() {
 
-              return (  
+      return (  
       <div >
         <div id="OrgCard" class="card">
          <div class="card-body">
@@ -294,10 +294,46 @@ class createProfile extends React.Component {
     </div>
   </div>
   <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">What do you require?</label>
+    <div class="col-md-6">
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="donationType" value="Money" id="Money"/>
+  <label class="form-check-label" for="Money">
+    Money
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="donationType" value="Food" id="Food"/>
+  <label class="form-check-label" for="Food">
+    Food
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="donationType" value="Clothes" id="Clothes"/>
+  <label class="form-check-label" for="Clothes">
+    Clothes
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="donationType" value="Services" id="Services"/>
+  <label class="form-check-label" for="Services">
+    Services
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" name="donationType" value="Shelter" id="Shelter"/>
+  <label class="form-check-label" for="Shelter">
+  Shelter
+  </label>
+</div>
+</div>
+</div>
+  <div class="form-group row">
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
+  
 </form>
       </div>
     );
