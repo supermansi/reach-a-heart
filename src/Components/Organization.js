@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Organization extends Component {
 
@@ -19,8 +19,8 @@ class Organization extends Component {
              <h1>Get in touch today!</h1>
              
              <Link to="/createProfile">
-             <button type="submit" class="btn btn-primary">Share your details</button>
-          </Link>
+               <button class="btn btn-primary">Share your details</button>
+            </Link>
            </div>
            </div>
         <div><h3>Our User Stories</h3></div>

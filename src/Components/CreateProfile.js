@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CreateProfile extends Component {
+export class CreateProfile extends Component {
 
     handleSubmit(event) {
       alert('Our representative will get in touch with you shortly!');
