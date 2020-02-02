@@ -44,14 +44,6 @@ class Donor extends Component {
      return (
        <div>
          <div id="how"> 
-           <h1>
-             How can you help? What can you provide?
-           </h1>
-           <form onSubmit={this.handleSubmit}>
-           <label>
-             What do you want to donate:
-           <input type="text" value={this.state != null ? this.state.query : 'pets'} onChange={this.handleChange} />
-          </label>
            <div className="card-deck">
              <div className="card" id="radio-choice">
                <div className="card-body">
@@ -62,7 +54,7 @@ class Donor extends Component {
              <div className="card" id="radio-choice">
                <div className="card-body">
                  <h4 className="card-title">Clothes</h4>
-                 <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                 <p className="card-text"> If you wish to donate clothes, you can select the option and donate to the organizations</p>
                </div>
              </div>
              <div className="card" id="radio-choice">
@@ -74,10 +66,19 @@ class Donor extends Component {
              <div className="card" id="radio-choice">
                <div className="card-body">
                  <h4 className="card-title">Shelter</h4>
-                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                 <p className="card-text"> You can collaborate with multiple organizations if you wish to provide shetlter/services</p>
+                 <p className="card-text"></p>
                </div>
              </div>
-           </div>           
+           </div> 
+           <h1>
+             How can you help? What can you provide?
+           </h1>
+           <form onSubmit={this.handleSubmit}>
+           <label>
+             What do you want to donate:
+           <input type="text" value={this.state != null ? this.state.query : 'pets'} onChange={this.handleChange} />
+          </label>          
           <input type="submit" value="Submit" />
          </form>
          </div>

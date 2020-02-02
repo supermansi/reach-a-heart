@@ -33,7 +33,7 @@ function App() {
 
 const Home = () => {
   return (
-    <div className="card-deck" id="decks">
+    <div className="card-deck margin-adj" id="decks">
       <div className="card" id="crd">
         <Link to="/donor">
         <div className="card-body">
