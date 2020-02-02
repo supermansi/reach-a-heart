@@ -5,6 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1c6d3;
+}
+
+h1, p {
+  font-size: larger;
+}
+
+h1, a {
+  color: #5f6caf;
 }
 
 code {
@@ -17,12 +26,13 @@ code {
 }
 
 .App {
-  margin: 5% 5% 0% 5%;
+  margin: 2% 5% 0% 5%;
 }
 
 #about {
   width: 50%;
   margin-left: 25%;
+  border: 10px solid #0fabbc;
 }
 
 #img-card {
@@ -32,7 +42,7 @@ code {
 #orgs-li {
   width: 25%;
   margin: auto;
-  border: 1px solid black;
+  border: 1px solid 0fabbc;
   padding: 1%;
 }
 
@@ -44,4 +54,30 @@ ul.list-group:after {
 
 .list-group-item {
     float: left;
+}
+
+#color-red {
+  color:red;
+}
+
+#home-text {
+  margin-top: 2%;
+}
+
+#decks {
+  margin: 2% 10% 0% 10%;
+}
+
+#crd {
+  border: 10px solid #0fabbc;
+}
+
+#crd-img {
+  width: 400px;
+  height: 300px;
+}
+
+#crd-img2 {
+  width: 500px;
+  height: 280px;
 }
