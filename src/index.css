@@ -81,3 +81,17 @@ ul.list-group:after {
   width: 500px;
   height: 280px;
 }
+
+#monay {
+  font-size: 500%;
+  color: green;
+}
+
+#radio-choice {
+  width: 20%;
+}
+
+#spoon {
+  font-size: 500%;
+  color: blue;
+}

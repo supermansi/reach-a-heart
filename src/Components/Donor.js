@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import './../App.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../../node_modules/font-awesome/css/font-awesome.min.css';
 
 class Donor extends Component {
 
@@ -40,73 +43,48 @@ class Donor extends Component {
      render() {
      return (
        <div>
-         <div id="which"> 
-           <h1>
-             Which disaster do you want to help with?
-           </h1>
-           <div className="card-deck">
-             <div className="card">
-               <div className="card-body">
-                 <h4 className="card-title">Disaster 1</h4>
-                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               </div>
-             </div>
-             <div className="card">
-               <div className="card-body">
-                 <h4 className="card-title">Disaster 2</h4>
-                 <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-               </div>
-             </div>
-             <div className="card">
-               <div className="card-body">
-                 <h4 className="card-title">Disaster 3</h4>
-                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-               </div>
-             </div>
-           </div>
-         </div>
          <div id="how"> 
            <h1>
              How can you help? What can you provide?
            </h1>
+           <form onSubmit={this.handleSubmit}>
+           <label>
+             What do you want to donate:
+           <input type="text" value={this.state != null ? this.state.query : 'pets'} onChange={this.handleChange} />
+          </label>
            <div className="card-deck">
-             <div className="card">
+             <div className="card" id="radio-choice">
                <div className="card-body">
-                 <h4 className="card-title">Money $$$</h4>
-                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                 <h4 className="card-title">Money</h4>
+                 <i className="fa fa-dollar" id="monay"></i><i className="fa fa-dollar" id="monay"></i><i className="fa fa-dollar" id="monay"></i>
                </div>
              </div>
-             <div className="card">
+             <div className="card" id="radio-choice">
                <div className="card-body">
                  <h4 className="card-title">Clothes</h4>
                  <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                </div>
              </div>
-             <div className="card">
+             <div className="card" id="radio-choice">
                <div className="card-body">
                  <h4 className="card-title">Food</h4>
-                 <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                 <i className="fa fa-spoon" id="spoon"></i><i className="fa fa-apple" id="spoon"></i>
                </div>
              </div>
-             <div className="card">
+             <div className="card" id="radio-choice">
                <div className="card-body">
                  <h4 className="card-title">Shelter</h4>
                  <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                </div>
              </div>
-           </div>
+           </div>           
+          <input type="submit" value="Submit" />
+         </form>
          </div>
          <div id="which"> 
            <h1>
              Who you can work with:
            </h1>
-         <form onSubmit={this.handleSubmit}>
-           <label>
-             What do you want to donate:
-           <input type="text" value={this.state != null ? this.state.query : 'pets'} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-         </form>
              {this.state != null ? this.displayOrgs() : null }
            </div>
        </div>

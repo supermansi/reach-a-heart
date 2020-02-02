@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 import Donor from './Components/Donor.js';
 import Organization from './Components/Organization.js';
 import CreateProfile from './Components/CreateProfile.js';
