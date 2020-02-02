@@ -20,6 +20,7 @@ function App() {
           <Route path="/home" component={Home}></Route>
           <Route path="/donor" component={Donor}></Route>          
           <Route path="/org" component={Organization}></Route>
+          <Route path="/createProfile" component={createProfile}></Route>
       </Router>
     </div>
   );
@@ -75,7 +76,6 @@ class Donor extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A query was submitted: ' + this.state.query);
     fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&pageSize=10&search="+
     this.state.query)
     .then(res => res.json())
@@ -169,7 +169,104 @@ class Organization extends React.Component {
   }
 
   render() {
-    return (  
+
+    return (
+      <div>
+       <div>
+        <div id="OrgCard" class="card"/>
+         <div class="card-body">
+           Register with our website and get donors everyday by posting requirements.
+           <h1>Get in touch today!</h1>
+           
+           <Link to="/createProfile">
+           <button type="submit" class="btn btn-primary">Share your details</button>
+        </Link>
+         </div>
+         </div>
+      <div><h3>Our User Stories</h3></div>
+      
+      <div class="container mt-4">
+      <div class="row">
+          <div class="col-auto mb-3">
+          <div class="card" style={{width: 18+'rem'}}>
+          <img src="..." class="card-img-top" alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+          </div>
+          <div class="col-auto mb-3">
+            <div class="card" style={{width: 18+'rem'}}>
+            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+          </div>
+          <div class="col-auto mb-3">
+            <div class="card" style={{width: 18+'rem'}}>
+            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+          </div>
+          <div class="col-auto mb-3">
+            <div class="card" style={{width: 18+'rem'}}>
+            <img src="..." class="card-img-top" alt="..."/>
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+          </div>
+          <div class="col-auto mb-3">
+          <div class="card" style={{width: 18+'rem'}}>
+          <img src="..." class="card-img-top" alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+          </div>
+          <div class="col-auto mb-3">
+          <div class="card" style={{width: 18+'rem'}}>
+          <img src="..." class="card-img-top" alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+          </div>
+         
+      </div>
+  </div>
+  </div>
+
+    );
+  }
+
+}
+
+class createProfile extends React.Component {
+
+  handleSubmit(event) {
+    alert('Our representative will get in touch with you shortly!');
+  
+  }
+
+  render() {
+
+              return (  
       <div >
         <div id="OrgCard" class="card">
          <div class="card-body">
@@ -180,19 +277,19 @@ class Organization extends React.Component {
         <form onSubmit={this.handleSubmit}>
       <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Organization name</label>
-    <div class="col-sm-10">
+    <div class="col-md-6">
       <input type="Organization name" class="form-control" id="inputEmail3" placeholder="Organization name"/>
     </div>
   </div>
   <div class="form-group row">
     <label for="Name" class="col-sm-2 col-form-label">Contact Name</label>
-    <div class="col-sm-10">
+    <div class="col-md-6">
       <input type="text" class="form-control" id="Name" placeholder="Whom shall we contact?"/>
     </div>
   </div>
   <div class="form-group row">
     <label for="Number" class="col-sm-2 col-form-label">Contact Number</label>
-    <div class="col-sm-10">
+    <div class="col-md-6">
       <input type="text" class="form-control" id="Number" placeholder="Where shall we contact?"/>
     </div>
   </div>
@@ -203,9 +300,8 @@ class Organization extends React.Component {
   </div>
 </form>
       </div>
-          
-
     );
+
   }
 
 }
