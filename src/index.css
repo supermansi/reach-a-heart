@@ -24,3 +24,20 @@ code {
 #img-card {
   width: 20%;
 }
+
+#orgs-li {
+  width: 25%;
+  margin: auto;
+  border: 1px solid black;
+  padding: 1%;
+}
+
+ul.list-group:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.list-group-item {
+    float: left;
+}

@@ -5,10 +5,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function App() {
 
-  fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search=pets")
-    .then(res => res.json())
-    .then(data => console.log(data));
-
   return (
     <div className="App">
       <div className="card" id="about">
@@ -50,7 +46,27 @@ const Home = () => {
   );
 }
 
-const Donor = () => {
+class Donor extends React.Component {
+
+  state;
+
+  constructor(props) {
+    super(props);
+    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search=pets")
+    .then(res => res.json())
+    .then(data => {
+      this.setState({orgs: data});
+    })
+  }
+
+  displayOrgs() {
+    var orgs;
+    orgs = this.state.orgs.map((x, i) =>
+    <li className="list-group-item" id="orgs-li" key={i}>{x.charityName}</li>);
+    return <ul className="list-group-horizontal">{orgs}</ul>
+  }
+
+  render() {
   return (
     <div>
       <div id="which"> 
@@ -113,28 +129,16 @@ const Donor = () => {
         <h1>
           Who you can work with:
         </h1>
-        <div className="card-deck">
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">Org 1</h4>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">Org 2</h4>
-              <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            </div>
-          </div>
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title">Org 3</h4>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            </div>
-          </div>
+          {this.state != null ? this.displayOrgs() : null }
         </div>
-      </div>
     </div>
+  );   
+}
+}
+
+const Orgs = (data) => {
+  return(
+  <li className="list-group-item">{data}</li>
   );
 }
 
