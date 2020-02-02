@@ -161,12 +161,6 @@ class Donor extends React.Component {
 }
 }
 
-const Orgs = (data) => {
-  return(
-  <li className="list-group-item">{data}</li>
-  );
-}
-
 const Organization = () => {
   return (
     <div>
