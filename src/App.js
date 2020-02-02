@@ -48,15 +48,19 @@ const Home = () => {
 
 class Donor extends React.Component {
 
-  state;
+ state;
 
   constructor(props) {
     super(props);
+
     fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search=pets")
     .then(res => res.json())
     .then(data => {
       this.setState({orgs: data});
     })
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   displayOrgs() {
@@ -66,6 +70,20 @@ class Donor extends React.Component {
     return <ul className="list-group-horizontal">{orgs}</ul>
   }
 
+  handleChange(event) {
+    this.setState({query: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A query was submitted: ' + this.state.query);
+    fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search="+
+    this.state.query)
+    .then(res => res.json())
+    .then(data => {
+      this.setState({orgs: data});
+    })
+    event.preventDefault();
+  }
   render() {
   return (
     <div>
@@ -129,6 +147,13 @@ class Donor extends React.Component {
         <h1>
           Who you can work with:
         </h1>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          What do you want to donate:
+        <input type="text" value={this.state != null ? this.state.query : 'pets'} onChange={this.handleChange} />
+       </label>
+       <input type="submit" value="Submit" />
+      </form>
           {this.state != null ? this.displayOrgs() : null }
         </div>
     </div>
