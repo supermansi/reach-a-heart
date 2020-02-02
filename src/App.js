@@ -4,6 +4,11 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 function App() {
+
+  fetch("https://api.data.charitynavigator.org/v2/Organizations?app_id=b6e4da89&app_key=c5ca56571c9d8ece3fa4a5075e5b44ca&search=pets")
+    .then(res => res.json())
+    .then(data => console.log(data));
+
   return (
     <div className="App">
       <div className="card" id="about">
@@ -26,24 +31,22 @@ function App() {
 
 const Home = () => {
   return (
-  <div className="card-deck" id="deck">
-  <Link to="/donor">
-    <div className="card" id="img-card">
-      <div className="card-body">
-        <h4 className="card-title">Donor</h4>
-        <img className="card-img-bottom" id="img-card" src="https://cdn.vox-cdn.com/thumbor/J3vYy7WxwuXGlhS9TxtrfnXCRLg=/0x0:1754x1241/1200x800/filters:focal(737x481:1017x761)/cdn.vox-cdn.com/uploads/chorus_image/image/65807400/GettyImages_1060748862.0.jpg"></img>
+    <div className="card-deck">
+      <div className="card">
+        <Link to="/donor">
+        <div className="card-body">
+          <h4 className="card-title">Donor</h4>
+        </div>
+        </Link>
+      </div>
+      <div className="card">
+        <Link to="/org">
+        <div className="card-body">
+          <h4 className="card-title">Organization</h4>
+        </div>
+        </Link>
       </div>
     </div>
-  </Link>
-  <Link to="/org">
-    <div className="card" id="img-card">
-      <div className="card-body">
-        <h4 className="card-title">Organization</h4>
-        {/* <img className="card-img-bottom" id="img-card" src="https://www.hostmerchantservices.com/wp-content/uploads/2011/10/charity.png"></img> */}
-      </div>
-    </div>
-    </Link>
-  </div>
   );
 }
 
