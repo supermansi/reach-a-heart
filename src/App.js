@@ -167,12 +167,54 @@ const Orgs = (data) => {
   );
 }
 
-const Organization = () => {
-  return (
-    <div>
-      <h3>Test</h3>
+
+class Organization extends React.Component {
+
+  handleSubmit(event) {
+    alert('Our representative will get in touch with you shortly!');
+  
+  }
+
+  render() {
+    return (  
+      <div >
+        <div id="OrgCard" class="card">
+         <div class="card-body">
+           Register with our website and get donors everyday by posting requirements.
+           <h1>Get in touch today!</h1>
+         </div>
+      </div>
+        <form onSubmit={this.handleSubmit}>
+      <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Organization name</label>
+    <div class="col-sm-10">
+      <input type="Organization name" class="form-control" id="inputEmail3" placeholder="Organization name"/>
     </div>
-  );
+  </div>
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label">Contact Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Name" placeholder="Whom shall we contact?"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Number" class="col-sm-2 col-form-label">Contact Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Number" placeholder="Where shall we contact?"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+      </div>
+          
+
+    );
+  }
+
 }
 
 export default App;

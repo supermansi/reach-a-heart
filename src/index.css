@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+#OrgCard{
+  margin-bottom: 30px;
+}
+
 .App {
   margin: 5% 5% 0% 5%;
 }
