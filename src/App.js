@@ -161,14 +161,6 @@ class Donor extends React.Component {
 }
 }
 
-<<<<<<< HEAD
-const Orgs = (data) => {
-  return(
-  <li className="list-group-item">{data}</li>
-  );
-}
-
-
 class Organization extends React.Component {
 
   handleSubmit(event) {
@@ -190,12 +182,6 @@ class Organization extends React.Component {
     <label for="inputEmail3" class="col-sm-2 col-form-label">Organization name</label>
     <div class="col-sm-10">
       <input type="Organization name" class="form-control" id="inputEmail3" placeholder="Organization name"/>
-=======
-const Organization = () => {
-  return (
-    <div>
-      <h3>Test</h3>
->>>>>>> 75de9f8b77c6d7550943100e3bf61967ce58e1a4
     </div>
   </div>
   <div class="form-group row">
