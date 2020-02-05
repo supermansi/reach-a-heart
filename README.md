@@ -1,3 +1,23 @@
+Reach A Heart, or abbreviated as RAH, in Hindi means a "path". We aim to create a path for anybody who wants to be a donor 
+in whichever means they can, to the ones in need, through organizations that can help.
+
+A simple attempt to bridge the gap between philantropists and charitable organizations. 
+This is prototype of an idea developed in TechTogether Hackathon. 
+
+Functionality implemented -
+
+- Call 'Charitable navigator' API and query with respect to the type of charity they are accepting(Food, Clothing, Shelter)
+- Sign up new organizations 
+- CI/CD using Github pages
+- Domain name registered
+
+Technology used -
+
+- React.js
+- Javascript
+- CI/CD using Github
+- Bootstrap
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
